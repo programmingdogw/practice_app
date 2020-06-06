@@ -23,7 +23,7 @@ class UserInfoController extends Controller
         
         // エロくワント ORマッパー
         $userinfos = UserInfo::all();
-        $user = \Auth::user();
+        $currentuser = \Auth::user();
 
         // クエリビルダ
         // $userinfos = DB::table('user_infos')
@@ -34,7 +34,7 @@ class UserInfoController extends Controller
         // dd($userinfos);
         // dd($user);
 
-        return view('userinfo.index', compact('userinfos', 'user'));
+        return view('userinfo.index', compact('userinfos', 'currentuser'));
     }
 
     /**
@@ -45,6 +45,7 @@ class UserInfoController extends Controller
     public function create()
     {
         //
+        $currentuser = \Auth::user();
         return view('userinfo.create');
     }
 
@@ -59,7 +60,7 @@ class UserInfoController extends Controller
         //
         $userinfo = new UserInfo;
 
-        $user = Auth::user();
+        $currentuser = Auth::user();
         $user_id = Auth::id();
 
 
@@ -89,6 +90,7 @@ class UserInfoController extends Controller
     {
         //
         $userinfo = UserInfo::find($id);
+        $currentuser = \Auth::user();
 
         if($userinfo->gender === 0){
             $gender = '男性';
@@ -131,6 +133,7 @@ class UserInfoController extends Controller
     {
         //
         $userinfo = UserInfo::find($id);
+        $currentuser = \Auth::user();
         return view('userinfo.edit', compact('userinfo'));
     }
 
@@ -145,6 +148,7 @@ class UserInfoController extends Controller
     {
         //
         $userinfo = UserInfo::find($id);
+        $currentuser = \Auth::user();
 
         // $user = Auth::user();
         // $user_id = Auth::id();
@@ -176,6 +180,7 @@ class UserInfoController extends Controller
     {
         //
         $userinfo = UserInfo::find($id);
+        $currentuser = \Auth::user();
         $userinfo->delete();
 
         return redirect('userinfo/index');
@@ -188,7 +193,7 @@ class UserInfoController extends Controller
     {
         //
 
-        $user = \Auth::user();
+        $currentuser = \Auth::user();
 
         
         return view('userinfo.originalshow', compact('id'));

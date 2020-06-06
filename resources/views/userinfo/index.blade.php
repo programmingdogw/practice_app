@@ -24,7 +24,7 @@
                         </button>
                     </form>
 
-                    <form method="GET" action="{{route('userinfo.originalshow', ['id'=>$user->id])}}">
+                    <form method="GET" action="{{route('userinfo.originalshow', ['id'=>$currentuser->id])}}">
                         <button type="submit" class="btn btn-primary">
                             マイページへ
                         </button>
@@ -56,7 +56,7 @@
                                     <td>{{ $userinfo->nickname}}</td>
                                     <td>{{ $userinfo->whatyougive}}</td>
                                     <td>{{ $userinfo->whatyouwant}}</td>
-                                    @if($user->id == $userinfo->user_id)                                    
+                                    @if($currentuser->id == $userinfo->user_id)                                    
                                         <td><a href="{{route('userinfo.edit', ['id'=>$userinfo->id] )}}">編集する</a></td>
                                         <td>
                                             <form method="POST" action="{{route('userinfo.destroy', ['id' => $userinfo->id])}}" id="delete_{{$userinfo->id}}">
