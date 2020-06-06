@@ -23,11 +23,17 @@
                       </button>
                     </form>
 
+                    <form method="GET" action="{{route('userinfo.originalshow', ['id'=>$user->id])}}">
+                      <button type="submit" class="btn btn-primary">
+                        マイページへ
+                      </button>
+                    </form>
+
                     <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">id</th>
-                                <th scope="col">名前</th>
+                                <th scope="col">ニックネーム</th>
                                 <th scope="col">提供できるスキル</th>
                                 <th scope="col">教えて欲しいスキル</th>
                                 <th scope="col">詳細</th>

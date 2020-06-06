@@ -23,6 +23,7 @@ class UserInfoController extends Controller
         
         // エロくワント ORマッパー
         $userinfos = UserInfo::all();
+        $user = \Auth::user();
 
         // クエリビルダ
         // $userinfos = DB::table('user_infos')
@@ -31,8 +32,9 @@ class UserInfoController extends Controller
         // ->get();
 
         // dd($userinfos);
+        // dd($user);
 
-        return view('userinfo.index', compact('userinfos'));
+        return view('userinfo.index', compact('userinfos', 'user'));
     }
 
     /**
@@ -177,6 +179,19 @@ class UserInfoController extends Controller
         $userinfo->delete();
 
         return redirect('userinfo/index');
+
+
+    }
+
+
+    public function originalshow($id)
+    {
+        //
+
+        $user = \Auth::user();
+
+        
+        return view('userinfo.originalshow', compact('id'));
 
 
     }

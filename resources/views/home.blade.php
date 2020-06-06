@@ -19,6 +19,10 @@
                 <div>
                 <a href="{{route('userinfo.index')}}">メンターを探す</a>
                 </div>
+
+                <div>
+                <a href="{{route('userinfo.originalshow', ['id'=>$user->id])}}">マイページへ</a>
+                </div>
             </div>
         </div>
     </div>
