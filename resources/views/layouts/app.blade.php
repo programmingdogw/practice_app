@@ -61,6 +61,12 @@
                                         {{ __('Logout') }}
                                     </a>
 
+                                    
+                                    <a href="#">マイページへのリンク表示。そもそもログイン時にしか表示されないので表示だけなら条件分岐は不要。トップページでのログイン前の場合を考慮してidがあればという条件分岐が必要かもしれないが。</a>
+                                    <a href="#">マイページへ</a>
+                                    
+                                    
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -78,3 +84,4 @@
     </div>
 </body>
 </html>
+
