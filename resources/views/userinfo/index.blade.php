@@ -10,25 +10,49 @@
             </div>
         @endif
         <div class="card">
-                <div class="card-header">使い方</div>
+                <div class="card-header">使い方・メニュー</div>
 
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-8">
+                            使い方
+                            <ul>
+                                <li>まずは募集カードであなたの欲しいスキルと提供できるスキルを登録しましょう</li>
+                                <li>リクエストを送るとカードの登録者からあなたの連絡先が見えるようになります</li>
+                                <li>あなたへのリクエストはマイページから確認できます</li>
+                                <li>連絡を取っても良ければ表示されている連絡先に連絡してみましょう</li>
+                                <li>zoomやグーグルハングアウトでお互いのスキルを教えあいましょう </li>
+                            </ul>
+                            グーグルハングアウトとは？
+                            <ul>
+                                <li><a href="https://apps.google.com/intl/ja/meet/?utm_source=google&utm_medium=cpc&utm_campaign=1008070-googlemeet-apac-jp-ja-bkws-bmm-regular&utm_content=utm_content=text-ad-none-none-DEV_c-CRE_437520833432-ADGP_Hybrid+%7C+AW+SEM+%7C+BKWS+~+EXA+%7C+Hangouts+%7C+%5BM:1%5D+%7C+JP+%7C+JA-KWID_43700053714612214-kwd-414711509166-userloc_1009717-network_g&utm_term=KW_%2B%E3%82%B0%E3%83%BC%E3%82%B0%E3%83%AB%E3%83%8F%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%A6%E3%83%88&gclid=Cj0KCQjwoPL2BRDxARIsAEMm9y-hufC3xnV6Z1Hbsy9Hf0QMVbWuf6pPA_TQpxoZFH_VsrKwmm-T6wMaAp3NEALw_wcB&gclsrc=aw.ds">こちらからご覧ください（外部リンク）</a></li>
+                            </ul>
+                            注意
+                            <ul>
+                                <li>連絡先の交換は自己責任となります</li>
+                                <li>破棄しても構わないサブアカウント等を使用しましょう。</li>
+                                <li>トラブル等に発展しないよう公序良俗に則った使用を心がけてください。</li>
+                            </ul>
+                            
+                        </div>
+                        <div class="col-4">
+                            メニュー
+                            <form method="GET" action="{{route('userinfo.create')}}" class="mt-1">
+                                <button type="submit" class="btn btn-primary">
+                                    募集カードを作成する
+                                </button>
+                            </form>
 
-
-                    <div>あなたも募集カードを追加しましょう。マッチングするとお互いに連絡先が見られるようになります。
+                            <form method="GET" action="{{route('userinfo.originalshow', ['id'=>$currentuser->id])}}" class="mt-2">
+                                <button type="submit" class="btn btn-primary">
+                                    マイページへ
+                                </button>
+                            </form>
+                        </div>
                     </div>
+                 
 
-                    <form method="GET" action="{{route('userinfo.create')}}">
-                        <button type="submit" class="btn btn-primary">
-                            募集カード追加
-                        </button>
-                    </form>
-
-                    <form method="GET" action="{{route('userinfo.originalshow', ['id'=>$currentuser->id])}}">
-                        <button type="submit" class="btn btn-primary">
-                            マイページへ
-                        </button>
-                    </form>
+                    
 
 
                 </div>
