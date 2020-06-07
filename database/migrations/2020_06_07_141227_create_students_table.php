@@ -17,6 +17,7 @@ class CreateStudentsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('studentname');
+            $table->string('studentemail');
             $table->timestamps();
         });
     }

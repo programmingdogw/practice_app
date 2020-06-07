@@ -21,8 +21,7 @@ class CreateUserInfosTable extends Migration
             $table->tinyInteger('age');
             $table->string('whatyougive', 20);
             $table->string('whatyouwant', 20);
-            $table->Integer('high_rating');
-            $table->Integer('low_rating');
+            $table->Integer('pusheduserid');
             $table->timestamps();
         });
     }

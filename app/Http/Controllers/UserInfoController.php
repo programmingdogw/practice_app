@@ -74,9 +74,7 @@ class UserInfoController extends Controller
         $userinfo->whatyougive = $request->input('whatyougive');
         $userinfo->gender = $request->input('gender');
         $userinfo->age = $request->input('age');
-        $userinfo->high_rating = 0;
-        $userinfo->low_rating = 0;
-        // $contactemail = $request->input('contactemail');
+        $userinfo->pusheduserid = 0;
 
         $userinfo->save();
 
@@ -154,19 +152,11 @@ class UserInfoController extends Controller
         $userinfo = UserInfo::find($id);
         $currentuser = \Auth::user();
 
-        // $user = Auth::user();
-        // $user_id = Auth::id();
-
-
-        // $userinfo->user_id = $user_id;
-        // $userinfo->nickname = $request->input('nickname');
         $userinfo->whatyouwant = $request->input('whatyouwant');
         $userinfo->whatyougive = $request->input('whatyougive');
         $userinfo->gender = $request->input('gender');
         $userinfo->age = $request->input('age');
-        // $userinfo->high_rating = 0;
-        // $userinfo->low_rating = 0;
-        // $contactemail = $request->input('contactemail');
+     
 
         $userinfo->save();
 
