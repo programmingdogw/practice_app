@@ -159,7 +159,7 @@ class UserInfoController extends Controller
 
 
         // $userinfo->user_id = $user_id;
-        $userinfo->nickname = $request->input('nickname');
+        // $userinfo->nickname = $request->input('nickname');
         $userinfo->whatyouwant = $request->input('whatyouwant');
         $userinfo->whatyougive = $request->input('whatyougive');
         $userinfo->gender = $request->input('gender');
@@ -203,12 +203,12 @@ class UserInfoController extends Controller
         $usercards = $user->userinfos;
 
         // dd($currentuser);
-        dd($user);
+        // dd($user);
 
         
 
         
-        return view('userinfo.originalshow', compact('currentuser', 'userinfo'));
+        return view('userinfo.originalshow', compact('currentuser', 'user', 'usercards'));
 
 
     }
