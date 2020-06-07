@@ -23,13 +23,58 @@
                     
                 <div class="card-header">このユーザーの登録したカード</div>
                     <div class="card-body">
-                        @foreach($usercards as $usercard)
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">ニックネーム</th>
+                                    <th scope="col">提供できるスキル</th>
+                                    <th scope="col">教えて欲しいスキル</th>
+                                    <th scope="col">金銭授受を希望しない</th>
+                                    <th scope="col">やり取りしたい時間帯</th>
+                                </tr>
+                            </thead>                    
+                            <tbody>
+                                @foreach($usercards as $usercard)                                
+                                    <tr>
+                                        <th>{{ $usercard->id}}</th>
+                                        <td>{{ $usercard->nickname}}</td>
+                                        <td>{{ $usercard->whatyougive}}</td>
+                                        <td>{{ $usercard->whatyouwant}}</td>
+                                        <td>
+                                            @if($usercard->gender == 0)
+                                                はい
+                                            @else
+                                                いいえ
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($usercard->age ==1)
+                                                9時〜12時
+                                            @elseif($usercard->age ==2)
+                                                12時〜15時
+                                            @elseif($usercard->age ==3)
+                                                15時〜18時
+                                            @elseif($usercard->age ==4)
+                                                18時〜21時
+                                            @elseif($usercard->age ==5)
+                                                21時〜24時
+                                            @else
+                                                早朝・深夜
+                                            @endif
+                                        </td>            
+                                    </tr>                                                                
+                                @endforeach
+                            </tbody>
+                        </table>
+
+                        <!-- @foreach($usercards as $usercard)
                             提供できるスキル:{{$usercard->whatyougive}}<br>
                             教えて欲しいスキル:{{$usercard->whatyouwant}}<br>
                             金銭のやり取りを希望しない:{{$usercard->gender}}<br>
                             やり取りしたい時間帯:{{$usercard->age}}<br>
 
-                        @endforeach
+                        @endforeach -->
                     </div>
                 
                     
