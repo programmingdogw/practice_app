@@ -194,6 +194,7 @@ class UserInfoController extends Controller
         //
 
         $currentuser = \Auth::user();
+        
 
         
         return view('userinfo.originalshow', compact('id'));
