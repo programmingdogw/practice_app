@@ -60,7 +60,7 @@
                     </div>
                 
                     
-                <div class="card-header">「{{$user->name}}」さんのもらったリクエスト一覧</div>
+                <div class="card-header">「{{$user->name}}」さんのもらったリクエスト一覧（金銭授受や時間帯は「{{$user->name}}」さんの希望したカードの設定です）</div>
                     <div class="card-body">
                         @if($currentuser->id == $user->id)
                             <table class="table">
@@ -68,10 +68,10 @@
                                         <tr>
                                             <th scope="col">名前</th>
                                             <th scope="col">連絡先</th>
-                                            <th scope="col">この人が習いたいスキル</th>
-                                            <th scope="col">この人のスキル</th>
+                                            <th scope="col">リクエスト者が求めるスキル</th>
+                                            <th scope="col">リクエスト者の提供してくれるスキル</th>
                                             <th scope="col">金銭授受を希望しない</th>
-                                            <th scope="col">やり取りしたい時間帯</th>
+                                            <th scope="col">やり取り時間</th>
                                         </tr>
                                     </thead>                    
                                     <tbody>

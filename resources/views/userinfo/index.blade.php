@@ -69,6 +69,8 @@
                                 <th scope="col">ニックネーム</th>
                                 <th scope="col">提供できるスキル</th>
                                 <th scope="col">教えて欲しいスキル</th>
+                                <th scope="col">金銭の授受を希望しない</th>
+                                <th scope="col">やり取りを希望する時間帯</th>
                                 <th scope="col">オプション１</th>
                                 <th scope="col">オプション２</th>
                             </tr>
@@ -80,6 +82,28 @@
                                     <td>{{ $userinfo->nickname}}</td>
                                     <td>{{ $userinfo->whatyougive}}</td>
                                     <td>{{ $userinfo->whatyouwant}}</td>
+                                    <td>
+                                    @if($userinfo->money == 0)
+                                        はい
+                                    @else
+                                        いいえ
+                                    @endif
+                                    </td>
+                                    <td>
+                                    @if($userinfo->time == 1)
+                                        9時~12時
+                                    @elseif($userinfo->time == 2)
+                                        12時~15時
+                                    @elseif($userinfo->time == 3)
+                                        15時~18時
+                                    @elseif($userinfo->time == 4)
+                                        18時~21時
+                                    @elseif($userinfo->time == 5)
+                                        21時~24時
+                                    @else
+                                        深夜・早朝
+                                    @endif
+                                    </td>
                                     @if($currentuser->id == $userinfo->user_id)                                    
                                         <td><a href="{{route('userinfo.edit', ['id'=>$userinfo->id] )}}">編集する</a></td>
                                         <td>
