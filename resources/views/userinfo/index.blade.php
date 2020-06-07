@@ -67,7 +67,18 @@
                                         </td>
                                     @else
                                         <td><a href="{{route('userinfo.originalshow', ['id'=>$userinfo->user_id] )}}">ユーザー詳細へ</a></td>
-                                        <td><a href="{{route('userinfo.originalshow', ['id'=>$userinfo->user_id] )}}">リクエストする</a></td>                                    
+                                        
+                                        <!-- オプション２の部分 -->
+                                        <td>
+                                            <form method="POST" action="{{route('student.store', ['id'=>$userinfo->id])}}">
+                                            @csrf
+
+                                            <input type="hidden" name="studentname" value="{{$currentuser->name}}">
+                                            <input type="hidden" name="user_id" value="{{$currentuser->id}}">
+
+                                            <input type="submit" name="btn_confirm" value="リクエストする">
+                                            </form>
+                                        </td>                                  
                                     @endif
                                 </tr>                                                                
                             @endforeach

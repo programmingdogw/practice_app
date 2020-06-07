@@ -39,7 +39,12 @@ class User extends Authenticatable
     ];
 
 
+    // リレーション
     public function userinfos(){
         return $this ->hasMany('App\Models\UserInfo');
+    }
+
+    public function students(){
+        return $this ->hasMany('App\Models\Student');
     }
 }

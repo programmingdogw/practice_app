@@ -48,3 +48,6 @@ Route::group(['prefix'=>'userinfo', 'middleware' => 'auth'], function(){
     Route::post('update/{id}', 'UserInfoController@update')->name('userinfo.update');
     Route::post('destroy/{id}', 'UserInfoController@destroy')->name('userinfo.destroy'); 
 });
+
+
+Route::post('student/store', 'StudentController@store')->name('student.store');
