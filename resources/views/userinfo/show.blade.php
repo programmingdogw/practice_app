@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<!-- 
+indexに編集削除ボタンを移動。userinfoの詳細は見せずにuserページにその他の値と一緒
+に載せる予定のためこのページは使わない可能性が高いが一応残している。 
+-->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

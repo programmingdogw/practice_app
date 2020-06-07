@@ -18,9 +18,9 @@
                     <form method="POST" action="{{route('userinfo.update', ['id' => $userinfo->id])}}">
                       @csrf
 
-                      ニックネーム
+                      <!-- ニックネーム
                       <input type="text" name="nickname" value="{{$userinfo->nickname}}">
-                      <br>
+                      <br> -->
                       提供できるスキル
                       <input type="text" name="whatyougive" value="{{$userinfo->whatyougive}}">
                       <br>

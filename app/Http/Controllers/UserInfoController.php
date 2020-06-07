@@ -10,8 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\DB;
 
+use APP\User;
+
 class UserInfoController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -23,6 +26,8 @@ class UserInfoController extends Controller
         
         // エロくワント ORマッパー
         $userinfos = UserInfo::all();
+        $currentuser = \Auth::user();
+        $nickname = $currentuser->name;
 
         // クエリビルダ
         // $userinfos = DB::table('user_infos')
@@ -31,8 +36,9 @@ class UserInfoController extends Controller
         // ->get();
 
         // dd($userinfos);
+        // dd($user);
 
-        return view('userinfo.index', compact('userinfos'));
+        return view('userinfo.index', compact('userinfos', 'currentuser', 'nickname'));
     }
 
     /**
@@ -43,7 +49,8 @@ class UserInfoController extends Controller
     public function create()
     {
         //
-        return view('userinfo.create');
+        $currentuser = \Auth::user();
+        return view('userinfo.create', compact('currentuser'));
     }
 
     /**
@@ -57,7 +64,7 @@ class UserInfoController extends Controller
         //
         $userinfo = new UserInfo;
 
-        $user = Auth::user();
+        $currentuser = Auth::user();
         $user_id = Auth::id();
 
 
@@ -67,9 +74,7 @@ class UserInfoController extends Controller
         $userinfo->whatyougive = $request->input('whatyougive');
         $userinfo->gender = $request->input('gender');
         $userinfo->age = $request->input('age');
-        $userinfo->high_rating = 0;
-        $userinfo->low_rating = 0;
-        // $contactemail = $request->input('contactemail');
+        $userinfo->pusheduserid = 0;
 
         $userinfo->save();
 
@@ -87,6 +92,7 @@ class UserInfoController extends Controller
     {
         //
         $userinfo = UserInfo::find($id);
+        $currentuser = \Auth::user();
 
         if($userinfo->gender === 0){
             $gender = '男性';
@@ -129,6 +135,7 @@ class UserInfoController extends Controller
     {
         //
         $userinfo = UserInfo::find($id);
+        $currentuser = \Auth::user();
         return view('userinfo.edit', compact('userinfo'));
     }
 
@@ -143,20 +150,13 @@ class UserInfoController extends Controller
     {
         //
         $userinfo = UserInfo::find($id);
+        $currentuser = \Auth::user();
 
-        // $user = Auth::user();
-        // $user_id = Auth::id();
-
-
-        // $userinfo->user_id = $user_id;
-        $userinfo->nickname = $request->input('nickname');
         $userinfo->whatyouwant = $request->input('whatyouwant');
         $userinfo->whatyougive = $request->input('whatyougive');
         $userinfo->gender = $request->input('gender');
         $userinfo->age = $request->input('age');
-        // $userinfo->high_rating = 0;
-        // $userinfo->low_rating = 0;
-        // $contactemail = $request->input('contactemail');
+     
 
         $userinfo->save();
 
@@ -174,9 +174,33 @@ class UserInfoController extends Controller
     {
         //
         $userinfo = UserInfo::find($id);
+        $currentuser = \Auth::user();
         $userinfo->delete();
 
         return redirect('userinfo/index');
+
+
+    }
+
+
+    public function originalshow($id)
+    {
+        //
+
+        $currentuser = \Auth::user();
+        $user = User::find($id);
+
+        $usercards = $user->userinfos;
+        $students = $user->students;
+
+        // dd($students[0]->studentname);
+
+        
+
+        
+
+        
+        return view('userinfo.originalshow', compact('currentuser', 'user', 'usercards', 'students'));
 
 
     }

@@ -43,7 +43,11 @@ Route::group(['prefix'=>'userinfo', 'middleware' => 'auth'], function(){
     Route::get('create', 'UserInfoController@create')->name('userinfo.create');
     Route::post('store', 'UserInfoController@store')->name('userinfo.store');
     Route::get('show/{id}', 'UserInfoController@show')->name('userinfo.show');
+    Route::get('originalshow/{id}', 'UserInfoController@originalshow')->name('userinfo.originalshow');
     Route::get('edit/{id}', 'UserInfoController@edit')->name('userinfo.edit');
     Route::post('update/{id}', 'UserInfoController@update')->name('userinfo.update');
     Route::post('destroy/{id}', 'UserInfoController@destroy')->name('userinfo.destroy'); 
 });
+
+
+Route::post('student/store', 'StudentController@store')->name('student.store');
