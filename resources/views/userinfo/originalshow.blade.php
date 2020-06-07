@@ -27,6 +27,15 @@
                         @endforeach
                     </div>
                     
+                    <div>
+                        もらったリクエスト一覧<br>
+                        @foreach($students as $student)
+                            From:{{$student->studentname}}<br>
+                            連絡先:{{$student->studentemail}}<br>
+                            生徒が教えて欲しいこと:{{$student->studentwant}}<br>
+                            生徒が教えてくれること:{{$student->studentgive}}<br>
+                        @endforeach
+                    </div>
 
 
 

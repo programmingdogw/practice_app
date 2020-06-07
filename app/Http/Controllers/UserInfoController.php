@@ -188,17 +188,19 @@ class UserInfoController extends Controller
         //
 
         $currentuser = \Auth::user();
-        // $userinfo = UserInfo::find($currentuser->id);
         $user = User::find($id);
+
         $usercards = $user->userinfos;
+        $students = $user->students;
 
-        // dd($currentuser);
-        // dd($user);
+        // dd($students[0]->studentname);
+
+        
 
         
 
         
-        return view('userinfo.originalshow', compact('currentuser', 'user', 'usercards'));
+        return view('userinfo.originalshow', compact('currentuser', 'user', 'usercards', 'students'));
 
 
     }

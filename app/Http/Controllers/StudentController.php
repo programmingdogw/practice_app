@@ -20,6 +20,9 @@ class StudentController extends Controller
         $student->user_id = $request->input('user_id');
         $student->studentname = $request->input('studentname');
         $student->studentemail = $request->input('studentemail');
+        $student->studentwant = $request->input('studentwant');
+        $student->studentgive = $request->input('studentgive');
+
 
 
         // 押されたカードのスウィッチをonに
