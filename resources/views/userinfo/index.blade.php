@@ -102,6 +102,8 @@
                                                 <input type="hidden" name="studentemail" value="{{$currentuser->email}}">
                                                 <input type="hidden" name="studentwant" value="{{$userinfo->whatyougive}}">
                                                 <input type="hidden" name="studentgive" value="{{$userinfo->whatyouwant}}">
+                                                <input type="hidden" name="cardmoney" value="{{$userinfo->money}}">
+                                                <input type="hidden" name="cardtime" value="{{$userinfo->time}}">
                                                 <input type="hidden" name="user_id" value="{{$userinfo->user_id}}">
                                                 <input type="hidden" name="pushedcardid" value="{{$userinfo->id}}">
 

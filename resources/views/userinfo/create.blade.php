@@ -40,17 +40,17 @@
 
                       
                     <div class="form-group row">
-                        <label for="age" class="col-sm-6 col-form-label">金銭のやり取りの無い方とだけ連絡を取りたいですか？</label>
+                        <label for="money" class="col-sm-6 col-form-label">金銭のやり取りの無い方とだけ連絡を取りたいですか？</label>
                         <div class="col-sm-6">
-                            <input type="radio" name="gender" value="0" class="mt-3">はい</input>
-                            <input type="radio" name="gender" value="1" class="mt-3">いいえ</input>
+                            <input type="radio" name="money" value="0" class="mt-3">はい</input>
+                            <input type="radio" name="money" value="1" class="mt-3">いいえ</input>
                             </div>
                       </div>
 
                       <div class="form-group row">
-                        <label for="age" class="col-sm-4 col-form-label">やり取りしたい時間帯</label>
+                        <label for="time" class="col-sm-4 col-form-label">やり取りしたい時間帯</label>
                         <div class="col-sm-8">
-                            <select name="age">
+                            <select name="time">
                                 <option value="">選択してください</option>
                                 <option value="1">９時~12時</option>
                                 <option value="2">12時~15時</option>
