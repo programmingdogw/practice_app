@@ -48,7 +48,7 @@
                       </div>
 
                       <div class="form-group row">
-                        <label for="age" class="col-sm-4 col-form-label">連絡の取りやすい時間帯</label>
+                        <label for="age" class="col-sm-4 col-form-label">やり取りしたい時間帯</label>
                         <div class="col-sm-8">
                             <select name="age">
                                 <option value="">選択してください</option>

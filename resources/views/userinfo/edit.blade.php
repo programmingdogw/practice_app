@@ -16,32 +16,7 @@
 
                     editです
                     <form method="POST" action="{{route('userinfo.update', ['id' => $userinfo->id])}}">
-                      <!-- @csrf
-                     
-                      提供できるスキル
-                      <input type="text" name="whatyougive" value="{{$userinfo->whatyougive}}">
-                      <br>
-                      欲しいスキル
-                      <input type="text" name="whatyouwant" value="{{$userinfo->whatyouwant}}">
-                      <br>
-                      性別
-                      <input type="radio" name="gender" value="0" @if($userinfo->gender === 0) checked @endif>男性
-                      <input type="radio" name="gender" value="1" @if($userinfo->gender === 1) checked @endif>女性
-                      <br>
-                      年齢
-                      <select name="age">
-                        <option value="">選択してください</option>
-                        <option value="1" @if($userinfo->age ===1) selected @endif>~19歳</option>
-                        <option value="2" @if($userinfo->age ===2) selected @endif>20~29歳</option>
-                        <option value="3" @if($userinfo->age ===3) selected @endif>30~39歳</option>
-                        <option value="4" @if($userinfo->age ===4) selected @endif>40~49歳</option>
-                        <option value="5" @if($userinfo->age ===5) selected @endif> 50~59歳</option>
-                        <option value="6" @if($userinfo->age ===6) selected @endif>60歳~</option>
-                      </select>
-                      <br>
-                      <input type="submit" name="btn_confirm" value="更新する">-->
                       @csrf
-            
 
                         <div class="form-group row">
                             <label for="whatyougive" class="col-sm-4 col-form-label">提供できるスキル</label>
@@ -72,7 +47,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="age" class="col-sm-4 col-form-label">連絡の取りやすい時間帯</label>
+                            <label for="age" class="col-sm-4 col-form-label">やり取りしたい時間帯</label>
                             <div class="col-sm-8">
                                 <select name="age">
                                     <option value="">選択してください</option>
