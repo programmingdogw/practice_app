@@ -95,28 +95,28 @@ class UserInfoController extends Controller
         $currentuser = \Auth::user();
 
         if($userinfo->gender === 0){
-            $gender = '男性';
+            $gender = 'はい';
         }
         if($userinfo->gender === 1){
-            $gender = '女性';
+            $gender = 'いいえ';
         }
         if($userinfo->age === 1){
-            $age = '~19歳';
+            $age = '9時~12時';
         }
         if($userinfo->age === 2){
-            $age = '20~29歳';
+            $age = '12時~15時';
         }
         if($userinfo->age === 3){
-            $age = '30~39歳';
+            $age = '15時~18時';
         }
         if($userinfo->age === 4){
-            $age = '40~49歳';
+            $age = '18時~21時';
         }
         if($userinfo->age === 5){
-            $age = '50~49歳';
+            $age = '21時~24時';
         }
         if($userinfo->age === 6){
-            $age = '60~歳';
+            $age = '深夜・早朝';
         }
 
 

@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">募集カード登録フォーム</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,43 +14,61 @@
                         </div>
                     @endif
 
-                    createです
 
                     <form method="POST" action="{{route('userinfo.store')}}">
                     @csrf
+                    <input type="hidden" name="nickname" value="{{$currentuser->name}}">
 
-                      <!-- ニックネーム
-                      <input type="text" name="nickname">
-                      <br> -->
-                      <input type="hidden" name="nickname" value="{{$currentuser->name}}">
+                    <div class="form-group row">
+                        <label for="whatyougive" class="col-sm-4 col-form-label">提供できるスキル</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="whatyougive" placeholder="20文字以内" required>
+                            <div class="invalid-feedback">入力してください</div>
+                        </div>
+                    </div>
 
-                      提供できるスキル
-                      <input type="text" name="whatyougive">
-                      <br>
-                      欲しいスキル
-                      <input type="text" name="whatyouwant">
-                      <br>
-                      性別
-                      <input type="radio" name="gender" value="0">男性</input>
-                      <input type="radio" name="gender" value="1">女性</input>
-                      <br>
-                      年齢
-                      <select name="age">
-                        <option value="">選択してください</option>
-                        <option value="1">~19歳</option>
-                        <option value="2">20~29歳</option>
-                        <option value="3">30~39歳</option>
-                        <option value="4">40~49歳</option>
-                        <option value="5">50~59歳</option>
-                        <option value="6">60歳~</option>
-                      </select>
-                      <br>
-                      <!-- 連絡に使用するアドレス
-                      <input type="email" name="contactemail">
-                      <br> -->
+                    <div class="form-group row">
+                        <label for="whatyouwant" class="col-sm-4 col-form-label">求めているスキル</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="whatyouwant" placeholder="20文字以内" required>
+                            <div class="invalid-feedback">入力してください</div>
+                        </div>
+                    </div>
+            
+                    
+                      
 
+                      
+                    <div class="form-group row">
+                        <label for="age" class="col-sm-6 col-form-label">金銭のやり取りの無い方とだけ連絡を取りたいですか？</label>
+                        <div class="col-sm-6">
+                            <input type="radio" name="gender" value="0" class="mt-3">はい</input>
+                            <input type="radio" name="gender" value="1" class="mt-3">いいえ</input>
+                            </div>
+                      </div>
 
-                      <input type="submit" name="btn_confirm" value="保存する">
+                      <div class="form-group row">
+                        <label for="age" class="col-sm-4 col-form-label">やり取りしたい時間帯</label>
+                        <div class="col-sm-8">
+                            <select name="age">
+                                <option value="">選択してください</option>
+                                <option value="1">９時~12時</option>
+                                <option value="2">12時~15時</option>
+                                <option value="3">15時~18時</option>
+                                <option value="4">18時~21時</option>
+                                <option value="5">21時~24時</option>
+                                <option value="6">深夜・早朝</option>
+                            </select>
+                        </div>
+                      </div>
+                      
+                    
+                      <div class="form-group row">
+                          <div class="col-sm-12">
+                              <button type="submit" class="btn btn-primary btn-block">登録する</button>
+                          </div>
+                      </div>
+                      
                     </form>
 
                 </div>
