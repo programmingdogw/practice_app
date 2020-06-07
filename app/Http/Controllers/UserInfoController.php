@@ -10,8 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\DB;
 
+use APP\User;
+
 class UserInfoController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -24,6 +27,7 @@ class UserInfoController extends Controller
         // エロくワント ORマッパー
         $userinfos = UserInfo::all();
         $currentuser = \Auth::user();
+        $nickname = $currentuser->name;
 
         // クエリビルダ
         // $userinfos = DB::table('user_infos')
@@ -34,7 +38,7 @@ class UserInfoController extends Controller
         // dd($userinfos);
         // dd($user);
 
-        return view('userinfo.index', compact('userinfos', 'currentuser'));
+        return view('userinfo.index', compact('userinfos', 'currentuser', 'nickname'));
     }
 
     /**
@@ -46,7 +50,7 @@ class UserInfoController extends Controller
     {
         //
         $currentuser = \Auth::user();
-        return view('userinfo.create');
+        return view('userinfo.create', compact('currentuser'));
     }
 
     /**
@@ -194,10 +198,17 @@ class UserInfoController extends Controller
         //
 
         $currentuser = \Auth::user();
+        // $userinfo = UserInfo::find($currentuser->id);
+        $user = User::find($id);
+        $usercards = $user->userinfos;
+
+        // dd($currentuser);
+        dd($user);
+
         
 
         
-        return view('userinfo.originalshow', compact('id'));
+        return view('userinfo.originalshow', compact('currentuser', 'userinfo'));
 
 
     }

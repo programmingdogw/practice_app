@@ -19,9 +19,11 @@
                     <form method="POST" action="{{route('userinfo.store')}}">
                     @csrf
 
-                      ニックネーム
+                      <!-- ニックネーム
                       <input type="text" name="nickname">
-                      <br>
+                      <br> -->
+                      <input type="hidden" name="nickname" value="{{$currentuser->name}}">
+
                       提供できるスキル
                       <input type="text" name="whatyougive">
                       <br>
