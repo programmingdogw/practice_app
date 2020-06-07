@@ -62,51 +62,54 @@
                     
                 <div class="card-header">「{{$user->name}}」さんのもらったリクエスト一覧</div>
                     <div class="card-body">
-                        <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">名前</th>
-                                        <th scope="col">連絡先</th>
-                                        <th scope="col">この人が習いたいスキル</th>
-                                        <th scope="col">この人のスキル</th>
-                                        <th scope="col">金銭授受を希望しない</th>
-                                        <th scope="col">やり取りしたい時間帯</th>
-                                    </tr>
-                                </thead>                    
-                                <tbody>
-                                    @foreach($students as $student)                                
+                        @if($currentuser->id == $user->id)
+                            <table class="table">
+                                    <thead>
                                         <tr>
-                                            <td>{{ $student->studentname}}</td>
-                                            <th>{{ $student->studentemail}}</th>
-                                            <td>{{ $student->studentwant}}</td>
-                                            <td>{{ $student->studentgive}}</td>
-                                            <td>
-                                                @if($student->gender == 0)
-                                                    はい
-                                                @else
-                                                    いいえ
-                                                @endif
-                                            </td>
-                                            <td>
-                                                @if($student->age ==1)
-                                                    9時〜12時
-                                                @elseif($student->age ==2)
-                                                    12時〜15時
-                                                @elseif($student->age ==3)
-                                                    15時〜18時
-                                                @elseif($student->age ==4)
-                                                    18時〜21時
-                                                @elseif($student->age ==5)
-                                                    21時〜24時
-                                                @else
-                                                    早朝・深夜
-                                                @endif
-                                            </td>            
-                                        </tr>                                                                
-                                    @endforeach
-                                </tbody>
+                                            <th scope="col">名前</th>
+                                            <th scope="col">連絡先</th>
+                                            <th scope="col">この人が習いたいスキル</th>
+                                            <th scope="col">この人のスキル</th>
+                                            <th scope="col">金銭授受を希望しない</th>
+                                            <th scope="col">やり取りしたい時間帯</th>
+                                        </tr>
+                                    </thead>                    
+                                    <tbody>
+                                        @foreach($students as $student)                                
+                                            <tr>
+                                                <td>{{ $student->studentname}}</td>
+                                                <th>{{ $student->studentemail}}</th>
+                                                <td>{{ $student->studentwant}}</td>
+                                                <td>{{ $student->studentgive}}</td>
+                                                <td>
+                                                    @if($student->gender == 0)
+                                                        はい
+                                                    @else
+                                                        いいえ
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    @if($student->age ==1)
+                                                        9時〜12時
+                                                    @elseif($student->age ==2)
+                                                        12時〜15時
+                                                    @elseif($student->age ==3)
+                                                        15時〜18時
+                                                    @elseif($student->age ==4)
+                                                        18時〜21時
+                                                    @elseif($student->age ==5)
+                                                        21時〜24時
+                                                    @else
+                                                        早朝・深夜
+                                                    @endif
+                                                </td>            
+                                            </tr>                                                                
+                                        @endforeach
+                                    </tbody>
                             </table>
-
+                        @else
+                            <p>連絡先を見ることができるのはリクエストを受けたユーザーだけです</p>
+                        @endif
 
 
 
