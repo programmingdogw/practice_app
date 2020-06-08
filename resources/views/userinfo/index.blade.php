@@ -69,7 +69,7 @@
                                 <th scope="col">ニックネーム</th>
                                 <th scope="col">提供できるスキル</th>
                                 <th scope="col">教えて欲しいスキル</th>
-                                <th scope="col">金銭の授受を希望しない</th>
+                                <!-- <th scope="col">金銭の授受を希望しない</th> -->
                                 <th scope="col">やり取りを希望する時間帯</th>
                                 <th scope="col">オプション１</th>
                                 <th scope="col">オプション２</th>
@@ -82,13 +82,13 @@
                                     <td>{{ $userinfo->nickname}}</td>
                                     <td>{{ $userinfo->whatyougive}}</td>
                                     <td>{{ $userinfo->whatyouwant}}</td>
-                                    <td>
+                                    <!-- <td>
                                     @if($userinfo->money == 1)
                                         はい
                                     @else
                                         いいえ
                                     @endif
-                                    </td>
+                                    </td> -->
                                     <td>
                                     @if($userinfo->time == 1)
                                         9時~12時
