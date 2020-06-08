@@ -22,7 +22,7 @@ class StudentController extends Controller
         $student->studentemail = $request->input('studentemail');
         $student->studentwant = $request->input('studentwant');
         $student->studentgive = $request->input('studentgive');
-        $student->cardmoney = $request->input('cardmoney');
+        // $student->cardmoney = $request->input('cardmoney');
         $student->cardtime = $request->input('cardtime');
 
 
@@ -31,7 +31,7 @@ class StudentController extends Controller
         // 押されたカードのスウィッチをonに
         $pushedcard = UserInfo::find($request->input('pushedcardid'));
         $pushedcard->pusheduserid = $currentuser->id;
-        // dd($pushedcard);
+        // dd($student->cardmoney);
         
         $student->save();
         $pushedcard->save();

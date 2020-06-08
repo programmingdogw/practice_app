@@ -20,7 +20,7 @@
                                     <th scope="col">名前</th>
                                     <th scope="col">提供できるスキル</th>
                                     <th scope="col">教えて欲しいスキル</th>
-                                    <th scope="col">金銭授受を希望しない</th>
+                                    <!-- <th scope="col">金銭授受を希望しない</th> -->
                                     <th scope="col">やり取りしたい時間帯</th>
                                 </tr>
                             </thead>                    
@@ -30,13 +30,13 @@
                                         <td>{{ $usercard->nickname}}</td>
                                         <td>{{ $usercard->whatyougive}}</td>
                                         <td>{{ $usercard->whatyouwant}}</td>
-                                        <td>
+                                        <!-- <td>
                                             @if($usercard->money == 1)
                                                 はい
                                             @else
                                                 いいえ
                                             @endif
-                                        </td>
+                                        </td> -->
                                         <td>
                                             @if($usercard->time ==1)
                                                 9時〜12時
@@ -70,7 +70,7 @@
                                             <th scope="col">連絡先</th>
                                             <th scope="col">リクエスト者が求めるスキル</th>
                                             <th scope="col">リクエスト者の提供してくれるスキル</th>
-                                            <th scope="col">金銭授受を希望しない</th>
+                                            <!-- <th scope="col">金銭授受を希望しない</th> -->
                                             <th scope="col">やり取り時間</th>
                                         </tr>
                                     </thead>                    
@@ -81,13 +81,13 @@
                                                 <th>{{ $student->studentemail}}</th>
                                                 <td>{{ $student->studentwant}}</td>
                                                 <td>{{ $student->studentgive}}</td>
-                                                <td>
+                                                <!-- <td>
                                                     @if($student->cardmoney == 1)
                                                         はい
                                                     @else
                                                         いいえ
                                                     @endif
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     @if($student->cardtime ==1)
                                                         9時〜12時

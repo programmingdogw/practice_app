@@ -38,13 +38,13 @@
                         
 
                         
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="money" class="col-sm-6 col-form-label">金銭のやり取りの無い方とだけ連絡を取りたいですか？</label>
                             <div class="col-sm-6">
                                 <input type="radio" name="money" value="1" class="mt-3" @if($userinfo->money === 1) checked @endif>はい</input>
                                 <input type="radio" name="money" value="2" class="mt-3" @if($userinfo->money === 2) checked @endif>いいえ</input>
                                 </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group row">
                             <label for="time" class="col-sm-4 col-form-label">やり取りしたい時間帯</label>

@@ -72,7 +72,7 @@ class UserInfoController extends Controller
         $userinfo->nickname = $request->input('nickname');
         $userinfo->whatyouwant = $request->input('whatyouwant');
         $userinfo->whatyougive = $request->input('whatyougive');
-        $userinfo->money = $request->input('money');
+        // $userinfo->money = $request->input('money');
         $userinfo->time = $request->input('time');
         $userinfo->pusheduserid = 0;
 
@@ -94,12 +94,12 @@ class UserInfoController extends Controller
         $userinfo = UserInfo::find($id);
         $currentuser = \Auth::user();
 
-        if($userinfo->money === 1){
-            $money = 'はい';
-        }
-        if($userinfo->money === 2){
-            $money = 'いいえ';
-        }
+        // if($userinfo->money === 1){
+        //     $money = 'はい';
+        // }
+        // if($userinfo->money === 2){
+        //     $money = 'いいえ';
+        // }
         if($userinfo->time === 1){
             $time = '9時~12時';
         }
@@ -119,8 +119,8 @@ class UserInfoController extends Controller
             $time = '深夜・早朝';
         }
 
-
-        return view('userinfo.show', compact('userinfo', 'money', 'time'));
+        // moneyはコンパクトから外してるので注意
+        return view('userinfo.show', compact('userinfo', 'time'));
 
 
     }
@@ -154,7 +154,7 @@ class UserInfoController extends Controller
 
         $userinfo->whatyouwant = $request->input('whatyouwant');
         $userinfo->whatyougive = $request->input('whatyougive');
-        $userinfo->money = $request->input('money');
+        // $userinfo->money = $request->input('money');
         $userinfo->time = $request->input('time');
      
 
