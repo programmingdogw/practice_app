@@ -17,7 +17,7 @@ class CreateUserInfosTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('nickname', 20);
-            $table->boolean('money');
+            $table->boolean('money')->nullable();
             $table->tinyInteger('time');
             $table->string('whatyougive', 20);
             $table->string('whatyouwant', 20);

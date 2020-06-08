@@ -20,7 +20,7 @@ class CreateStudentsTable extends Migration
             $table->string('studentemail');
             $table->string('studentwant');
             $table->string('studentgive');
-            $table->string('cardmoney');
+            $table->string('cardmoney')->nullable();
             $table->string('cardtime');
             $table->timestamps();
         });
