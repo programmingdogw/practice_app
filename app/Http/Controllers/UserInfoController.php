@@ -94,10 +94,10 @@ class UserInfoController extends Controller
         $userinfo = UserInfo::find($id);
         $currentuser = \Auth::user();
 
-        if($userinfo->money === 0){
+        if($userinfo->money === 1){
             $money = 'はい';
         }
-        if($userinfo->money === 1){
+        if($userinfo->money === 2){
             $money = 'いいえ';
         }
         if($userinfo->time === 1){

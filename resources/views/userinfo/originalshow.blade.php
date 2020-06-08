@@ -31,7 +31,7 @@
                                         <td>{{ $usercard->whatyougive}}</td>
                                         <td>{{ $usercard->whatyouwant}}</td>
                                         <td>
-                                            @if($usercard->money == 0)
+                                            @if($usercard->money == 1)
                                                 はい
                                             @else
                                                 いいえ
@@ -82,7 +82,7 @@
                                                 <td>{{ $student->studentwant}}</td>
                                                 <td>{{ $student->studentgive}}</td>
                                                 <td>
-                                                    @if($student->cardmoney == 0)
+                                                    @if($student->cardmoney == 1)
                                                         はい
                                                     @else
                                                         いいえ

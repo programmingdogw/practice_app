@@ -83,7 +83,7 @@
                                     <td>{{ $userinfo->whatyougive}}</td>
                                     <td>{{ $userinfo->whatyouwant}}</td>
                                     <td>
-                                    @if($userinfo->money == 0)
+                                    @if($userinfo->money == 1)
                                         はい
                                     @else
                                         いいえ
