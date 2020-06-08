@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">トップページ</div>
+                <div class="card-header">トップページテスト中</div>
 
                 <div class="card-body">
                   <ul>
