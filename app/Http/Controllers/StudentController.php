@@ -22,6 +22,9 @@ class StudentController extends Controller
         $student->studentemail = $request->input('studentemail');
         $student->studentwant = $request->input('studentwant');
         $student->studentgive = $request->input('studentgive');
+        $student->cardmoney = $request->input('cardmoney');
+        $student->cardtime = $request->input('cardtime');
+
 
 
 

@@ -31,22 +31,22 @@
                                         <td>{{ $usercard->whatyougive}}</td>
                                         <td>{{ $usercard->whatyouwant}}</td>
                                         <td>
-                                            @if($usercard->gender == 0)
+                                            @if($usercard->money == 0)
                                                 はい
                                             @else
                                                 いいえ
                                             @endif
                                         </td>
                                         <td>
-                                            @if($usercard->age ==1)
+                                            @if($usercard->time ==1)
                                                 9時〜12時
-                                            @elseif($usercard->age ==2)
+                                            @elseif($usercard->time ==2)
                                                 12時〜15時
-                                            @elseif($usercard->age ==3)
+                                            @elseif($usercard->time ==3)
                                                 15時〜18時
-                                            @elseif($usercard->age ==4)
+                                            @elseif($usercard->time ==4)
                                                 18時〜21時
-                                            @elseif($usercard->age ==5)
+                                            @elseif($usercard->time ==5)
                                                 21時〜24時
                                             @else
                                                 早朝・深夜
@@ -60,7 +60,7 @@
                     </div>
                 
                     
-                <div class="card-header">「{{$user->name}}」さんのもらったリクエスト一覧</div>
+                <div class="card-header">「{{$user->name}}」さんのもらったリクエスト一覧（金銭授受や時間帯は「{{$user->name}}」さんの希望したカードの設定です）</div>
                     <div class="card-body">
                         @if($currentuser->id == $user->id)
                             <table class="table">
@@ -68,10 +68,10 @@
                                         <tr>
                                             <th scope="col">名前</th>
                                             <th scope="col">連絡先</th>
-                                            <th scope="col">この人が習いたいスキル</th>
-                                            <th scope="col">この人のスキル</th>
+                                            <th scope="col">リクエスト者が求めるスキル</th>
+                                            <th scope="col">リクエスト者の提供してくれるスキル</th>
                                             <th scope="col">金銭授受を希望しない</th>
-                                            <th scope="col">やり取りしたい時間帯</th>
+                                            <th scope="col">やり取り時間</th>
                                         </tr>
                                     </thead>                    
                                     <tbody>
@@ -82,22 +82,22 @@
                                                 <td>{{ $student->studentwant}}</td>
                                                 <td>{{ $student->studentgive}}</td>
                                                 <td>
-                                                    @if($student->gender == 0)
+                                                    @if($student->cardmoney == 0)
                                                         はい
                                                     @else
                                                         いいえ
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    @if($student->age ==1)
+                                                    @if($student->cardtime ==1)
                                                         9時〜12時
-                                                    @elseif($student->age ==2)
+                                                    @elseif($student->cardtime ==2)
                                                         12時〜15時
-                                                    @elseif($student->age ==3)
+                                                    @elseif($student->cardtime ==3)
                                                         15時〜18時
-                                                    @elseif($student->age ==4)
+                                                    @elseif($student->cardtime ==4)
                                                         18時〜21時
-                                                    @elseif($student->age ==5)
+                                                    @elseif($student->cardtime ==5)
                                                         21時〜24時
                                                     @else
                                                         早朝・深夜

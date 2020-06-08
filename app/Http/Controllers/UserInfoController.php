@@ -72,8 +72,8 @@ class UserInfoController extends Controller
         $userinfo->nickname = $request->input('nickname');
         $userinfo->whatyouwant = $request->input('whatyouwant');
         $userinfo->whatyougive = $request->input('whatyougive');
-        $userinfo->gender = $request->input('gender');
-        $userinfo->age = $request->input('age');
+        $userinfo->money = $request->input('money');
+        $userinfo->time = $request->input('time');
         $userinfo->pusheduserid = 0;
 
         $userinfo->save();
@@ -94,33 +94,33 @@ class UserInfoController extends Controller
         $userinfo = UserInfo::find($id);
         $currentuser = \Auth::user();
 
-        if($userinfo->gender === 0){
-            $gender = 'はい';
+        if($userinfo->money === 0){
+            $money = 'はい';
         }
-        if($userinfo->gender === 1){
-            $gender = 'いいえ';
+        if($userinfo->money === 1){
+            $money = 'いいえ';
         }
-        if($userinfo->age === 1){
-            $age = '9時~12時';
+        if($userinfo->time === 1){
+            $time = '9時~12時';
         }
-        if($userinfo->age === 2){
-            $age = '12時~15時';
+        if($userinfo->time === 2){
+            $time = '12時~15時';
         }
-        if($userinfo->age === 3){
-            $age = '15時~18時';
+        if($userinfo->time === 3){
+            $time = '15時~18時';
         }
-        if($userinfo->age === 4){
-            $age = '18時~21時';
+        if($userinfo->time === 4){
+            $time = '18時~21時';
         }
-        if($userinfo->age === 5){
-            $age = '21時~24時';
+        if($userinfo->time === 5){
+            $time = '21時~24時';
         }
-        if($userinfo->age === 6){
-            $age = '深夜・早朝';
+        if($userinfo->time === 6){
+            $time = '深夜・早朝';
         }
 
 
-        return view('userinfo.show', compact('userinfo', 'gender', 'age'));
+        return view('userinfo.show', compact('userinfo', 'money', 'time'));
 
 
     }
@@ -154,8 +154,8 @@ class UserInfoController extends Controller
 
         $userinfo->whatyouwant = $request->input('whatyouwant');
         $userinfo->whatyougive = $request->input('whatyougive');
-        $userinfo->gender = $request->input('gender');
-        $userinfo->age = $request->input('age');
+        $userinfo->money = $request->input('money');
+        $userinfo->time = $request->input('time');
      
 
         $userinfo->save();
