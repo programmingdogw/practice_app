@@ -67,8 +67,8 @@
                             <tr>
                                 <th scope="col">id</th>
                                 <th scope="col">ニックネーム</th>
-                                <th scope="col">提供できるスキル</th>
-                                <th scope="col">教えて欲しいスキル</th>
+                                <th scope="col">カード作成者の提供できるスキル</th>
+                                <th scope="col">カード作成者の教えて欲しいスキル</th>
                                 <!-- <th scope="col">金銭の授受を希望しない</th> -->
                                 <th scope="col">カード作成者の希望する時間帯</th>
                                 <th scope="col">オプション１</th>

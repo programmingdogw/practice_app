@@ -18,8 +18,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">名前</th>
-                                    <th scope="col">カード作成者の提供できるスキル</th>
-                                    <th scope="col">カード作成者の教えて欲しいスキル</th>
+                                    <th scope="col">「{{$user->name}}」さんの提供できるスキル</th>
+                                    <th scope="col">「{{$user->name}}」さんの教えて欲しいスキル</th>
                                     <!-- <th scope="col">金銭授受を希望しない</th> -->
                                     <th scope="col">やり取りしたい時間帯</th>
                                 </tr>
