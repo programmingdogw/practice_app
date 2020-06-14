@@ -32,9 +32,11 @@ class StudentController extends Controller
         $pushedcard = UserInfo::find($request->input('pushedcardid'));
         $pushedcard->pusheduserid = $currentuser->id;
         // dd($student->cardmoney);
+        $pushedcard->save();
+
         
         $student->save();
-        $pushedcard->save();
+        
 
         // return redirect('userinfo/index');
         return view('student.store');

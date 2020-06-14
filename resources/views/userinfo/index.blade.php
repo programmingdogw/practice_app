@@ -59,7 +59,6 @@
             </div>
             <div class="card">
                 <div class="card-header">募集カード一覧</div>
-
                 <div class="card-body">
 
                     <table class="table">
@@ -70,7 +69,7 @@
                                 <th scope="col">提供できるスキル</th>
                                 <th scope="col">教えて欲しいスキル</th>
                                 <!-- <th scope="col">金銭の授受を希望しない</th> -->
-                                <th scope="col">やり取りを希望する時間帯</th>
+                                <th scope="col">カード作成者の希望する時間帯</th>
                                 <th scope="col">オプション１</th>
                                 <th scope="col">オプション２</th>
                             </tr>
@@ -117,7 +116,6 @@
                                         <td><a href="{{route('userinfo.originalshow', ['id'=>$userinfo->user_id] )}}">ユーザー詳細へ</a></td>
                                         
                                         <!-- オプション２の部分 -->
-                                        @if($currentuser->id != $userinfo->pusheduserid)
                                             <td>
                                                 <form method="POST" action="{{route('student.store')}}">
                                                 @csrf
@@ -134,10 +132,7 @@
 
                                                 <input type="submit" name="btn_confirm" value="リクエストする">
                                                 </form>
-                                            </td>
-                                        @else
-                                            <td>リクエスト済みです</td>
-                                        @endif                                  
+                                            </td>                              
                                     @endif
                                 </tr>                                                                
                             @endforeach

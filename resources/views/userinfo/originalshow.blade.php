@@ -62,7 +62,7 @@
                     
                 <div class="card-header">「{{$user->name}}」さんのもらったリクエスト一覧（金銭授受や時間帯は「{{$user->name}}」さんの希望したカードの設定です）</div>
                     <div class="card-body">
-                        @if($currentuser->id == $user->id)
+                        
                             <table class="table">
                                     <thead>
                                         <tr>
@@ -78,7 +78,11 @@
                                         @foreach($students as $student)                                
                                             <tr>
                                                 <td>{{ $student->studentname}}</td>
-                                                <th>{{ $student->studentemail}}</th>
+                                                @if($currentuser->id == $user->id)
+                                                    <th>{{ $student->studentemail}}</th>
+                                                @else
+                                                    <th>連絡先を見ることができるのはリクエストを受けたユーザーだけです</th>
+                                                @endif
                                                 <td>{{ $student->studentwant}}</td>
                                                 <td>{{ $student->studentgive}}</td>
                                                 <!-- <td>
@@ -107,9 +111,7 @@
                                         @endforeach
                                     </tbody>
                             </table>
-                        @else
-                            <p>連絡先を見ることができるのはリクエストを受けたユーザーだけです</p>
-                        @endif
+                        
 
 
 
