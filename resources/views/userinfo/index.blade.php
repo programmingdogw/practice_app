@@ -59,7 +59,6 @@
             </div>
             <div class="card">
                 <div class="card-header">募集カード一覧</div>
-
                 <div class="card-body">
 
                     <table class="table">
