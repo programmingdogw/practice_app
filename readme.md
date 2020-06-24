@@ -37,9 +37,9 @@ gif画像が入る
 ### usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|bigint(20)|null: false|
+|id|bigint(20)|unsigned,null: false|
 |name|varchar(255)|null: false|
-|email|string|null: false, unique:true|
+|email|varchar(255)|null: false, unique:true|
 |email_verified_at|timestamp||
 |password|varchar(255)|null: false|
 |remember_token|varchar(100)||
@@ -54,8 +54,8 @@ gif画像が入る
 ### user_infosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|bigint(20)|null: false|
-|user_id|bigint(20)|null: false|
+|id|bigint(20)|unsigned, null: false|
+|user_id|bigint(20)|unsigned, null: false, foreignkey:true|
 |nickname|varchar(20)|null: false|
 |time|tinyint(4)|null: false|
 |whatyougive|varchar(20)|null: false|
@@ -72,12 +72,13 @@ gif画像が入る
 ### studentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|bigint(20)|null: false|
-|user_id|bigint(20)|null: false|
+|id|bigint(20)|unsigned, null: false|
+|user_id|bigint(20)|unsigned, null: false, foreignkey:true|
 |studentname|varchar(255)|null: false|
 |studentemail|varchar(255)|null: false|
 |studentwant|varchar(255)|null: false|
 |studentgive|varchar(255)|null: false|
+|cardtime|tinyint(4)|null:false|
 |created_at|timestamp||
 |updated_at|timestamp||
 
