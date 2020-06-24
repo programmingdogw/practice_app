@@ -69,4 +69,22 @@ gif画像が入る
 - has_one : 
 
 
+### studentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|bigint(20)|null: false|
+|user_id|bigint(20)|null: false|
+|studentname|varchar(255)|null: false|
+|studentemail|varchar(255)|null: false|
+|studentwant|varchar(255)|null: false|
+|studentgive|varchar(255)|null: false|
+|created_at|timestamp||
+|updated_at|timestamp||
+
+
+### Association
+- has_many: 
+- has_one : 
+
+
 
