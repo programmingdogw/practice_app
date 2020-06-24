@@ -48,8 +48,8 @@ gif画像が入る
 
 
 ### Association
-- has_many: 
-- has_one : 
+- hasMany:userinfos 
+- hasMany:students
 
 ### user_infosテーブル
 |Column|Type|Options|
@@ -65,8 +65,8 @@ gif画像が入る
 
 
 ### Association
-- has_many: 
-- has_one : 
+- belongsTo: user 
+
 
 
 ### studentsテーブル
@@ -83,8 +83,8 @@ gif画像が入る
 
 
 ### Association
-- has_many: 
-- has_one : 
+- belongsTo:user
+
 
 
 
