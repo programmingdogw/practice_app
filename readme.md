@@ -33,16 +33,33 @@ laravelの理解も最低限したいが、フレームワークを使わずア�
 ### 挙動
 gif画像が入る
 
-### DB設計
-## usersテーブル
+### DB
+### usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|bigint(20)|null: false|
 |name|varchar(255)|null: false|
-|email|string|null: false|
+|email|string|null: false, unique:true|
 |email_verified_at|timestamp||
 |password|varchar(255)|null: false|
 |remember_token|varchar(100)||
+|created_at|timestamp||
+|updated_at|timestamp||
+
+
+### Association
+- has_many: 
+- has_one : 
+
+### user_infosテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|bigint(20)|null: false|
+|user_id|bigint(20)|null: false|
+|nickname|varchar(20)|null: false|
+|time|tinyint(4)|null: false|
+|whatyougive|varchar(20)|null: false|
+|whatyouwant|varchar(20)|null: false|
 |created_at|timestamp||
 |updated_at|timestamp||
 
